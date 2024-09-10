@@ -1,0 +1,24 @@
+{
+  "1": {
+      "Factuality Score": 5,
+      "Consistency Score": 5,
+      "Relevance Score": 5,
+      "Fluency Score": 5,
+      "Coherence Score": 5,
+      "Accuracy Score": 5,
+      "Multidimensional Quality Score": 5,
+      "Semantic Appropriateness Score": 5,
+      "Understandability Score": 5
+  },
+  "2": {
+      "Factuality Score": 5,
+      "Consistency Score": 5,
+      "Relevance Score": 5,
+      "Fluency Score": 5,
+      "Coherence Score": 5,
+      "Accuracy Score": 5,
+      "Multidimensional Quality Score": 5,
+      "Semantic Appropriateness Score": 5,
+      "Understandability Score": 5
+  }
+}
