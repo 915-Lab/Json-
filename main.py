@@ -6,7 +6,7 @@ def read_json_file():
     json파일을 읽어들여 딕셔너리 data에 데이터 저장하는 함수
     :return:
     """
-    file_path = "data_json/gpt_4o_mini_GPTScore_1500_0.json"  # 상대경로 저장
+    file_path = "data_json/test01.json"  # 상대경로 저장
     with open(file_path, "r") as fp:  # 경로에 해당되는 json파일 열기, 'r' -> 읽기모드, fp 객체생성
         data = json.load(fp)  # data 딕셔너리에 json 데이터 저장
     return data
@@ -31,7 +31,9 @@ def data_setting(data):
             if count == len(value):  # 점수 기준이 9개이므로 add값을 초기화 하기위해 두번째 반복문 break
                 break
 
+        add = int(round((add / len(value)) * 20))  # 소수 첫 번째 자리에서 반올림
         result[key] = add
+
     return result
 
 
@@ -64,6 +66,8 @@ def run():
     data_set = data_setting(read)
     set_json_file(data_set)
 
+def result_average():
+    pass
 
 if __name__ == "__main__":
     run()
