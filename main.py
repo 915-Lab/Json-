@@ -19,7 +19,7 @@ def data_setting(data):
     :return:
     """
     result = dict()
-
+    average = 0
     for key, value in data.items():  # key -> "1","2" / value -> 점수 딕셔너리
         add = 0
         count = 0
@@ -33,6 +33,10 @@ def data_setting(data):
 
         add = int(round((add / len(value)) * 20))  # 소수 첫 번째 자리에서 반올림
         result[key] = add
+        average = average + add
+
+    result_len = len(result) # 기존 딕셔너리 길이를 저장
+    result["average"] = round((average / result_len),2) # 평균값을 구하는식 소수점 두 번째 자리까지 나타냄
 
     return result
 
@@ -48,12 +52,6 @@ def set_json_file(result):
         json.dump(result, fp, indent=4)  # indent=4를 이용하여 들여쓰기설정
 
 
-def instence_set():
-    read = read_json_file()
-    data_set = data_setting(read)
-    set_json_file(data_set)
-
-
 def run():
     """
     객체생성함수
@@ -66,8 +64,6 @@ def run():
     data_set = data_setting(read)
     set_json_file(data_set)
 
-def result_average():
-    pass
 
 if __name__ == "__main__":
     run()
